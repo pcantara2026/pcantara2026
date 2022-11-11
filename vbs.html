@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivid BAD SQUAD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body {
+            background-image: url(https://static.wikia.nocookie.net/projectsekai/images/5/58/Background_Street_SEKAI.png/revision/latest/);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .header{
+            color: #00006c;
+            font-size: 1px;
+            min-height: 100vh;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            padding: 1% 1%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .info{
+            width: 80%;
+            background: rgba(232, 227, 243, 0.8);
+            position: absolute;
+            top:20%;
+            left:10%;
+            right:10%;
+            display: block;
+            text-decoration: none;
+            color: #361340 ;
+            border: 1px solid #2F2359;
+            border-radius: 10px;
+            padding: 2% 2%;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .info h1{
+            font-size: 1px;
+        }
+        .text{
+            width: 90%;
+            padding-top: 25px;
+            padding-left: 4%;
+            padding-right: 2%;
+            text-align: center;
+        }
+        .text h1{
+            font-size: 48px;
+            padding-bottom: 20px;
+            color: #2D1035;
+        }
+        .text hr{
+            margin-right: 10%;
+            margin-left: 10%;
+            border-top: 2px solid #361340;
+        }
+        .text p{
+            padding-top: 20px;
+            font-size: 24px;
+            padding-bottom: 30px;
+        }
+        .membersimg{
+            flex-basis: 32%;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            position:relative;
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        .membersimg img{
+            display: block;
+            width: 300px;
+            height: 400px;
+        }
+        .kohanelayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .kohanelayer:hover{
+            background: #FF679A;
+        }
+        .kohanelayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .kohanelayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .kohanelayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .kohanelayer:hover p{
+            bottom: 8%;
+            opacity: 1;
+        }
+        .anlayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .anlayer:hover{
+            background: #00BBDC;
+        }
+        .anlayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .anlayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .anlayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .anlayer:hover p{
+            bottom: 24%;
+            opacity: 1;
+        }
+        .akitolayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .akitolayer:hover{
+            background: #FF7721;
+        }
+        .akitolayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .akitolayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .akitolayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .akitolayer:hover p{
+            bottom: 25%;
+            opacity: 1;
+        }
+        .toyalayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .toyalayer:hover{
+            background: #0077DD;
+        }
+        .toyalayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .toyalayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .toyalayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .toyalayer:hover p{
+            bottom: 28%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--Home-->
+    <section class="header">
+        <h1>.</h1>
+        <nav>
+         <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="abtus.html">ABOUT US</a></li>
+                <li><a href="Groups.html">BACK TO GROUPS</a></li>
+            </ul>
+         </div>
+        </nav>
+        <div class="text-box">
+            <h1>KamiyaMusic</h1>
+        </div>
+    </section>
+    <section class="info">
+        <h1>.</h1>
+        <div class="logo">
+        <img src="https://static.wikia.nocookie.net/projectsekai/images/4/4a/Vividbadsquadlogo.png/revision/latest/scale-to-width-down/400?cb=20200214175338" alt="img did not load">
+        </div>
+        <div class="text">
+            <div class="background">
+                <h1>Background</h1> <hr>
+               <p>Azusawa Kohane gets lost in the streets while trying to purchase a CD for her mom, stumbling upon Shiraishi An and her fellow musicians performing inside Weekend Garage's backstage area. Though captivated by their singing, she runs away out of shyness when confronted by An. After coming back a week later, An still remembers Kohane and performs for her, also inviting the girl to sing. An realizes the potential Kohane has when singing, inviting her to form a band in her dream to surpass a legendary music event dubbed RAD WEEKEND. She agrees, thus forming their duo group, Vivids. They also happen to meet BAD DOGS, Shinonome Akito and Aoyagi Toya, on the same day.</p>
+            </div>
+            <div class="trivia">
+             <h1>Trivia</h1> <hr>
+             <p>-Vivid BAD SQUAD is the only group to consist of two subunits, as Kohane and An are active as Vivids while Akito and Toya are active as BAD DOGS. <br> -Each unit member represents one of the four seasons: Kohane's birthday is in spring, An's birthday is in summer, Akito's name is homonymous with autumn (彰 and 秋), and Toya's name contains the kanji for winter (冬).</p>
+            </div>
+            <div class="memberstxt">
+                <h1>Members</h1> <hr>
+            </div>
+            <div class="members">
+                <div class="membersimg">
+                    <img src="pics/kohane.png" alt="img did not load">
+                    <div class="kohanelayer">
+                        <h3>Kohane Azusawa</h3>
+                        <p>Birthday: March 2 <br> Height: 156cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Looking after her dad's pet snake <br> Specialty: Photography <br> Favorite Food: Peach buns, Sesame balls <br> Least Favorite Food: Pickled foods <br> Dislikes: Public speaking</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/an.png" alt="img did not load">
+                    <div class="anlayer">
+                        <h3>An Shiraishi</h3>
+                        <p>Birthday: July 26 <br> Height: 160cm <br> School: Kamiyama High School <br> Hobbies: Growing mint <br> Specialty: Making coffee and tea <br> Favorite Food: Rum raisin ice cream <br> Least Favorite Food: Tomatoes <br> Dislikes: Ghosts, Scary stories</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/akito.png" alt="img did not load">
+                    <div class="akitolayer">
+                        <h3>Akito Shinonome</h3>
+                        <p>Birthday: November 12 <br> Height: 174cm <br> School: Kamiyama High School <br> Hobbies: Fashion Styling  <br> Specialty: Beatboxing <br> Favorite Food: Pancakes, Cheesecakes <br> Least Favorite Food: Carrots <br> Dislikes: Dogs</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/toya.png" alt="img did not load">
+                    <div class="toyalayer">
+                        <h3>Aoyagi Toya</h3>
+                        <p>Birthday: May 25 <br> Height: 178cm <br> School: Kamiyama High School <br> Hobbies: Reading <br> Specialty: Piano, Violin <br> Favorite Food: Coffee, Cookies <br> Least Favorite Food: Squid <br> Dislikes: Heights</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>Music</h1> <hr>
+                <p>Listen to their Music Here!</p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLVFSjVMCQhngi6W6kRChzNH8xzjAEZrRd" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

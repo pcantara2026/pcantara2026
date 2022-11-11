@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        .header{
+            color: #00006c;
+            font-size: 1px;
+            min-height: 100vh;
+            width: 100%;
+            background-image: url(https://lh3.googleusercontent.com/q_rZ1vG_sEEBs6FdDPqqbUQgGyL6yszcuXlITeQJ-n9xnoLS6kDRpUL3UKJ9faEDIRARcliVuv_CGEFlTGsGP1bb59MovQljiQi0fohUq2a8BGrr5UT4MJfF8ha-IahTBvs7oK41pgXIl_cp1CpRERAuSHor50B9XPT82gd4FdpgMLDHHCTlGrpUnTb-Ep2qSdkSzMSfuMW6_xhi1CK4pAnIKR4XgC97gQHSEKHYem-TrfaDUGVRXox0M_jCcdVJo6YITtiVyoq_fCRKbbwhs7L1Si6AxW4utq6dW_CSxD9wH5Hcrb5-UZPDryqEfM6Sl-QE9zC0DoMsfWwBO7uSoS0Z5MQnmGkFRgkowIV-a-ZgDAbwMuovnUTDCGgcq-N2mCbRim37E_RG0w5KPr43G5ubLy2RmctgnLt5e41KbsCr00aDNWOFrj5xxpb3U-n8JTw5mBJSurc4q5DKcEu6c048QTk-f-mi2dgq1BZ7b6L7Zkf7w0vBDQxZ-TNhw9cr5vFe6CUnh22r6DZKO6Np0_3TrWpiPYbuXUV-gfei0k8JNJ1USxRPwE2XMrzq8tRPv0bERRnl3CrV86W337xHvw5AT8liDqE2AgHyDooDRo4wZ7TTg750wWSO9HaAAj_5F4kZR9M07sYENuODkcRFs0x6LX74782HzJBQnxH-1BAjcasTYbyxCtKdHSMju8IC3rKnvGa6kZquc1s3qoxP6y-uFF7_y_mAgX1i8YrkVSzqN7S5sctX78Efbxsnruh5agZBocbKYefrrjsBXbGSj9sbnt3taxX2392OtGCKetefpHlDmAF-jVSFwnfWL6zGKiP6IF0kCtGRZLl3MEu_ML1Hx7GQ1bnwM7pjXhDoq0XrGia3phY9BzTv0OS2yc1ahe7y7Z7YdVD-gfcSPIkMPKbDvtzOgDfxMh53aLIQ4NHQ2R4HvjjTxoGiBHRGaVHiJDt0YlUy-spTq6SxxUDnv5punSo6xYXE1l5vUCyWfU4RRzV3_WotloN2nUIVQt4LEtUQ3PU3akNUg7KmpyHPGdxX7pcWV5qvUokt9nUPl_iERdle_2fsKLiemIiPaFWBR6zm1_jl3ZuBpC3nHijBimGk5BQuUA=w1200-h739-no?authuser=0);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        nav{
+            display: flex;
+            padding: 1% 1%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .text-box p{
+            font-size: 32px;
+        }
+        .text-box hr{
+            border-top: 2px solid #fff;
+            margin-right: 20%;
+            margin-left: 20%;
+        }
+       
+    </style>
+</head>
+<body>
+    <!--Home-->
+    <section class="header">
+        <h1>.</h1>
+        <nav>
+         <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="abtus.html">ABOUT US</a></li>
+            </ul>
+         </div>
+        </nav>
+        <div class="text-box">
+            <h1>KamiyaMusic</h1> <hr>
+            <p> KamiyaMusic is a music webite focusing on supporting rising indie artists in Kamiyama. <br>
+                We release a weekly list on the Top 5 artists that seem to have the most potential to breakthrough the music industry. <br>
+                KamiyaMusic's goal is to make Kamiyama's music known around the world. <br>
+                KamiyaMusic is ran and founded by Paula Mae Cantara, a music nerd and enthusiast (who's bad at rhythm games.) <br>
+            </p>
+        </div>
+    </section>
+</body>
+</html>

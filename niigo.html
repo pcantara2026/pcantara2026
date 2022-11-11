@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-ji, Nightcord de</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body {
+            background-image: url(https://static.wikia.nocookie.net/projectsekai/images/9/9c/25ji-sekai.jpg/revision/latest/);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .header{
+            color: #00006c;
+            font-size: 1px;
+            min-height: 100vh;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            padding: 1% 1%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .info{
+            width: 80%;
+            background: rgba(235, 238, 242, 0.8);
+            position: absolute;
+            top:20%;
+            left:10%;
+            right:10%;
+            display: block;
+            text-decoration: none;
+            color: #361340 ;
+            border: 1px solid #2F2359;
+            border-radius: 10px;
+            padding: 2% 2%;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .info h1{
+            font-size: 1px;
+        }
+        .text{
+            width: 90%;
+            padding-top: 25px;
+            padding-left: 4%;
+            padding-right: 2%;
+            text-align: center;
+        }
+        .text h1{
+            font-size: 48px;
+            padding-bottom: 20px;
+            color: #2D1035;
+        }
+        .text hr{
+            margin-right: 10%;
+            margin-left: 10%;
+            border-top: 2px solid #361340;
+        }
+        .text p{
+            padding-top: 20px;
+            font-size: 24px;
+            padding-bottom: 30px;
+        }
+        .membersimg{
+            flex-basis: 32%;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            position:relative;
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        .membersimg img{
+            display: block;
+            width: 300px;
+            height: 400px;
+        }
+        .kanadelayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .kanadelayer:hover{
+            background: #BB6588;
+        }
+        .kanadelayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .kanadelayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .kanadelayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .kanadelayer:hover p{
+            bottom: 8%;
+            opacity: 1;
+        }
+        .mafuyulayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .mafuyulayer:hover{
+            background: #8889CC;
+        }
+        .mafuyulayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .mafuyulayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .mafuyulayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .mafuyulayer:hover p{
+            bottom: 24%;
+            opacity: 1;
+        }
+        .enalayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .enalayer:hover{
+            background: #CCAA87;
+        }
+        .enalayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .enalayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .enalayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .enalayer:hover p{
+            bottom: 25%;
+            opacity: 1;
+        }
+        .mizukilayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .mizukilayer:hover{
+            background: #E4A8CA;
+        }
+        .mizukilayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .mizukilayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .mizukilayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .mizukilayer:hover p{
+            bottom: 28%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--Home-->
+    <section class="header">
+        <h1>.</h1>
+        <nav>
+         <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="abtus.html">ABOUT US</a></li>
+                <li><a href="Groups.html">BACK TO GROUPS</a></li>
+            </ul>
+         </div>
+        </nav>
+        <div class="text-box">
+            <h1>KamiyaMusic</h1>
+        </div>
+    </section>
+    <section class="info">
+        <h1>.</h1>
+        <div class="logo">
+        <img src="https://static.wikia.nocookie.net/projectsekai/images/9/9b/25ji_en_logo.png/revision/latest/scale-to-width-down/400?cb=20211209182952" alt="img did not load">
+        </div>
+        <div class="text">
+            <div class="background">
+                <h1>Background</h1> <hr>
+               <p>The circle was created by K (Kanade), in hopes of making music that "saves people" and makes them happy. She recruits the other members, Enanan (Ena), Amia (Mizuki), and Yuki (Mafuyu), communicating through a chat tool called "Nightcord." All members were unaware of each other's real names or appearances </p>
+            </div>
+            <div class="trivia">
+             <h1>Trivia</h1> <hr>
+             <p>-The only 25-ji, Nightcord de. member who regularly attends school during the day is Mafuyu. While the other members are enrolled in school, Kanade takes her classes online, Ena takes night classes, and Mizuki often skips class. <br> -25-ji, Nightcord de. is the only unit where their members use stage names. <br> -The members have surnames that reference different times of day: Yoisaki (“宵”, night), Akiyama (“暁”, the moment right before sunrise), Shinonome (“東雲”, dawn), and Asahina (“朝”, morning).</p>
+            </div>
+            <div class="memberstxt">
+                <h1>Members</h1> <hr>
+            </div>
+            <div class="members">
+                <div class="membersimg">
+                    <img src="pics/kanade.png" alt="img did not load">
+                    <div class="kanadelayer">
+                        <h3>Kanade Yoisaki</h3>
+                        <p>Birthday: February 10 <br> Height: 154cm <br> School: Online High School <br> Hobbies: Finding new music to listen to, Movies, Manga, Anime, Art <br> Specialty: An innate ability to accurately track time <br> Favorite Food: Instant Noodles, Canned food <br> Least Favorite Food: Coriander, natto, and other smelly foods <br> Dislikes: Direct sunlight, Housework</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/mafuyu.png" alt="img did not load">
+                    <div class="mafuyulayer">
+                        <h3>Mafuyu Asahina</h3>
+                        <p>Birthday: January 27 <br> Height: 162cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Aquarium <br> Specialty: Speaking English <br> Favorite Food: Mom's home cooking <br> Least Favorite Food: Not sure <br> Dislikes: Not sure</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/ena.png" alt="img did not load">
+                    <div class="enalayer">
+                        <h3>Ena Shinonome</h3>
+                        <p>Birthday: April 30 <br> Height: 158cm <br> School: Kamiyama High School Night Classes <br> Hobbies: Drawing, Taking selfies, Social media, Egosurfing <br> Specialty: Researching fashion accessories, Picking out the best cooking ingredients <br> Favorite Food: Pancakes, Cheesecakes <br> Least Favorite Food: Carrots <br> Dislikes: Getting up in the morning</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/mizuki.png" alt="img did not load">
+                    <div class="mizukilayer">
+                        <h3>Mizuki Akiyama</h3>
+                        <p>Birthday: August 27 <br> Height: 163cm <br> School: Kamiyama High School <br> Hobbies: Making Videos, Collages <br> Specialty: Redesigning Clothes <br> Favorite Food: Curry rice, French fries <br> Least Favorite Food: Mushrooms <br> Dislikes: Foods that are too hot</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>Music</h1> <hr>
+                <p>Listen to their Music Here!</p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLh5ScaAFY9FmUkf15KIzgeb7RHlRNejLK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

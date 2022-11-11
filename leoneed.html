@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo/need</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body {
+            background-image: url(https://static.wikia.nocookie.net/projectsekai/images/b/b4/Leoneed-sekai.jpg/revision/latest/);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .header{
+            color: #00006c;
+            font-size: 1px;
+            min-height: 100vh;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            padding: 1% 1%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .info{
+            width: 80%;
+            background: rgba(242, 242, 242, 0.8);
+            position: absolute;
+            top:20%;
+            left:10%;
+            right:10%;
+            display: block;
+            text-decoration: none;
+            color: #2F2359;
+            border: 1px solid #2F2359;
+            border-radius: 10px;
+            padding: 2% 2%;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .info h1{
+            font-size: 1px;
+        }
+        .text{
+            width: 90%;
+            padding-top: 25px;
+            padding-left: 4%;
+            padding-right: 2%;
+            text-align: center;
+        }
+        .text h1{
+            font-size: 48px;
+            padding-bottom: 20px;
+            color: #3E3673;
+        }
+        .text hr{
+            margin-right: 10%;
+            margin-left: 10%;
+            border-top: 2px solid #2F2359;
+        }
+        .text p{
+            padding-top: 20px;
+            font-size: 24px;
+            padding-bottom: 30px;
+        }
+        .membersimg{
+            flex-basis: 32%;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            position:relative;
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        .membersimg img{
+            display: block;
+            width: 300px;
+            height: 400px;
+        }
+        .ichikalayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .ichikalayer:hover{
+            background: #33AAEE;
+        }
+        .ichikalayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .ichikalayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .ichikalayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .ichikalayer:hover p{
+            bottom: 18%;
+            opacity: 1;
+        }
+        .honamilayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .honamilayer:hover{
+            background: #EE6666;
+        }
+        .honamilayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .honamilayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .honamilayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .honamilayer:hover p{
+            bottom: 13%;
+            opacity: 1;
+        }
+        .sakilayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .sakilayer:hover{
+            background: #FFDD45;
+        }
+        .sakilayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .sakilayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .sakilayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .sakilayer:hover p{
+            bottom: 13%;
+            opacity: 1;
+        }
+        .shiholayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .shiholayer:hover{
+            background: #BBDE22;
+        }
+        .shiholayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .shiholayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .shiholayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .shiholayer:hover p{
+            bottom: 8%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--Home-->
+    <section class="header">
+        <h1>.</h1>
+        <nav>
+         <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="abtus.html">ABOUT US</a></li>
+                <li><a href="Groups.html">BACK TO GROUPS</a></li>
+            </ul>
+         </div>
+        </nav>
+        <div class="text-box">
+            <h1>KamiyaMusic</h1>
+        </div>
+    </section>
+    <section class="info">
+        <h1>.</h1>
+        <div class="logo">
+        <img src="https://static.wikia.nocookie.net/projectsekai/images/7/7c/Leoneedlogo.png/revision/latest/scale-to-width-down/400?cb=20200213204008" alt="img did not load">
+        </div>
+        <div class="text">
+            <div class="background">
+                <h1>Background</h1> <hr>
+               <p> The members of Leo/need were once childhood friends who played music together. However, their relationship became strained after a secret incident during middle school. When Saki returns during high school, the band reunites.</p>
+            </div>
+            <div class="trivia">
+             <h1>Trivia</h1> <hr>
+             <p>-Leo/need is named after the Leonids, a meteor shower that happens in the radiant of the constellation Leo. <br>-Their surnames are references to different celestial bodies: Hoshino (“星”, star), Tenma (“天”, sky), Mochizuki (“月”, moon), and Hinomori (“日”, sun).</p>
+            </div>
+            <div class="memberstxt">
+                <h1>Members</h1> <hr>
+            </div>
+            <div class="members">
+                <div class="membersimg">
+                    <img src="pics/ichika.png" alt="img did not load">
+                    <div class="ichikalayer">
+                        <h3>Ichika Hoshino</h3>
+                        <p>Birthday: August 11 <br> Height: 161cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Listening to Miku songs, Admiring her cacti <br> Specialty: Peeling apples <br> Favorite Food: Yakisoba buns <br> Least Favorite Food: Green peas <br> Dislikes: Thrill Rides</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/honami.png" alt="img did not load">
+                    <div class="honamilayer">
+                        <h3>Honami Mochizuki</h3>
+                        <p>Birthday: October 27 <br> Height: 166cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Walking her dog, Gardening <br> Specialty: Housekeeping, Swimming <br> Favorite Food: Apple pie <br> Least Favorite Food: Cheese <br> Dislikes: Drawing</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/saki.png" alt="img did not load">
+                    <div class="sakilayer">
+                        <h3>Saki Tenma</h3>
+                        <p>Birthday: May 9 <br> Height: 159cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Fashion & make up videos, Beading  <br> Specialty: Hairstyling, Juggling <br> Favorite Food: Snacks <br> Least Favorite Food: Rice porridge <br> Dislikes: Being alone</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/shiho.png" alt="img did not load">
+                    <div class="shiholayer">
+                        <h3>Shiho Hinomori</h3>
+                        <p>Birthday: January 8 <br> Height: 159cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Going to girl band gigs, Playing bass guitar <br> Specialty: Calligraphy <br> Favorite Food: Ramen, Salisbury Steak <br> Least Favorite Food: Tofu <br> Dislikes: Her sister (Shizuku Hinomori)</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>Music</h1> <hr>
+                <p>Listen to their Music Here!</p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLh5ScaAFY9FnR5_QuyVSwJY1TNHFBCCId" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

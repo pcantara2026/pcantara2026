@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderlands x Showtimec</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body {
+            background-image: url(https://static.wikia.nocookie.net/projectsekai/images/f/f0/Wxs_sekai.jpg/revision/latest/);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .header{
+            color: #00006c;
+            font-size: 1px;
+            min-height: 100vh;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            padding: 1% 1%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .info{
+            width: 80%;
+            background: rgba(248, 242, 247, 0.8);
+            position: absolute;
+            top:20%;
+            left:10%;
+            right:10%;
+            display: block;
+            text-decoration: none;
+            color: #493f21;
+            border: 1px solid #2F2359;
+            border-radius: 10px;
+            padding: 2% 2%;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .info h1{
+            font-size: 1px;
+        }
+        .text{
+            width: 90%;
+            padding-top: 25px;
+            padding-left: 4%;
+            padding-right: 2%;
+            text-align: center;
+        }
+        .text h1{
+            font-size: 48px;
+            padding-bottom: 20px;
+            color: #1b1608;
+        }
+        .text hr{
+            margin-right: 10%;
+            margin-left: 10%;
+            border-top: 2px solid #361340;
+        }
+        .text p{
+            padding-top: 20px;
+            font-size: 24px;
+            padding-bottom: 30px;
+        }
+        .membersimg{
+            flex-basis: 32%;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            position:relative;
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        .membersimg img{
+            display: block;
+            width: 300px;
+            height: 400px;
+        }
+        .tsukasalayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .tsukasalayer:hover{
+            background: #FFBB00;
+        }
+        .tsukasalayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .tsukasalayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .tsukasalayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .tsukasalayer:hover p{
+            bottom: 8%;
+            opacity: 1;
+        }
+        .emulayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .emulayer:hover{
+            background: #FF66BC;
+        }
+        .emulayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .emulayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .emulayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .emulayer:hover p{
+            bottom: 21%;
+            opacity: 1;
+        }
+        .nenelayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .nenelayer:hover{
+            background: #34DD9A;
+        }
+        .nenelayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .nenelayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .nenelayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .nenelayer:hover p{
+            bottom: 20%;
+            opacity: 1;
+        }
+        .ruilayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .ruilayer:hover{
+            background: #BB88ED;
+        }
+        .ruilayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .ruilayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .ruilayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .ruilayer:hover p{
+            bottom: 26%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--Home-->
+    <section class="header">
+        <h1>.</h1>
+        <nav>
+         <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="abtus.html">ABOUT US</a></li>
+                <li><a href="Groups.html">BACK TO GROUPS</a></li>
+            </ul>
+         </div>
+        </nav>
+        <div class="text-box">
+            <h1>KamiyaMusic</h1>
+        </div>
+    </section>
+    <section class="info">
+        <h1>.</h1>
+        <div class="logo">
+        <img src="https://static.wikia.nocookie.net/projectsekai/images/6/69/Wxs_en_logo.png/revision/latest/scale-to-width-down/400" alt="img did not load">
+        </div>
+        <div class="text">
+            <div class="background">
+                <h1>Background</h1> <hr>
+               <p>After failing his audition, Tenma Tsukasa is hired by Otori Emu to return the Phoenix Wonderland Stage to its former glory with incredible performances. The two actors recruit stage director and roboticist Kamishiro Rui and shy singer Kusanagi Nene, along with her robot replica Nene-Robo.</p>
+            </div>
+            <div class="trivia">
+             <h1>Trivia</h1> <hr>
+             <p>-All four troupe members were inspired to become performers because of a play or concert they saw when they were young. <br> -Each member's surname is a reference to a legendary being: Tenma (“天馬”, pegasus), Otori (“鳳”, phoenix), Kusanagi (“草薙”, the Kusanagi sword), and Kamishiro (“神”, god).</p>
+            </div>
+            <div class="memberstxt">
+                <h1>Members</h1> <hr>
+            </div>
+            <div class="members">
+                <div class="membersimg">
+                    <img src="pics/tsukasa.png" alt="img did not load">
+                    <div class="tsukasalayer">
+                        <h3>Tsukasa Tenma</h3>
+                        <p>Birthday: May 17 <br> Height: 172cm <br> School: Kamiyama High School <br> Hobbies: Mussicals, Making costumes <br> Specialty: Striking cool poses, Piano <br> Favorite Food: Acqua Pazza, Ginger fried pork <br> Least Favorite Food: Peppers <br> Dislikes: Bugs (especially centipedes and millipedes)</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/emu.png" alt="img did not load">
+                    <div class="emulayer">
+                        <h3>Emu Ootori</h3>
+                        <p>Birthday: September 9 <br> Height: 152cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Exploring the neighborhood <br> Specialty: Acrobatics, Foodie <br> Favorite Food: Taiyaki <br> Least Favorite Food: None! <br> Dislikes: Dusk</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/nene.png" alt="img did not load">
+                    <div class="nenelayer">
+                        <h3>Kusanagi Nene</h3>
+                        <p>Birthday: July 20 <br> Height: 156cm <br> School: Kamiyama High School <br> Hobbies: Fighting games, Musicals, Movies  <br> Specialty: Singing, Technology <br> Favorite Food: Grapefruit <br> Least Favorite Food: Mint flavor foods <br> Dislikes: Crowded places</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/rui.png" alt="img did not load">
+                    <div class="ruilayer">
+                        <h3>Rui Kamishiro</h3>
+                        <p>Birthday: June 24 <br> Height: 180cm <br> School: Kamiyama High School <br> Hobbies: Planning shows, Balloon art <br> Specialty: Inventing <br> Favorite Food: Soda candy <br> Least Favorite Food: Vegetables <br> Dislikes: Cleaning, Menial Tasks</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>Music</h1> <hr>
+                <p>Listen to their Music Here!</p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLh5ScaAFY9FlqjcSrVLA2TRvU-fogKZyM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

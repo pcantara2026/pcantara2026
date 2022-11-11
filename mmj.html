@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORE MORE JUMP!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body {
+            background-image: url(https://static.wikia.nocookie.net/projectsekai/images/5/52/Mmj-sekai.jpg/revision/latest/);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .header{
+            color: #00006c;
+            font-size: 1px;
+            min-height: 100vh;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            padding: 1% 1%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: rgb(73, 73, 73);
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .info{
+            width: 80%;
+            background: rgba(235, 242, 238, 0.8);
+            position: absolute;
+            top:20%;
+            left:10%;
+            right:10%;
+            display: block;
+            text-decoration: none;
+            color: #4d643a ;
+            border: 1px solid #2F2359;
+            border-radius: 10px;
+            padding: 2% 2%;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .logo img{
+            width:400px
+        }
+        .info h1{
+            font-size: 1px;
+        }
+        .text{
+            width: 90%;
+            padding-top: 25px;
+            padding-left: 4%;
+            padding-right: 2%;
+            text-align: center;
+        }
+        .text h1{
+            font-size: 48px;
+            padding-bottom: 20px;
+            color: #2d3625;
+        }
+        .text hr{
+            margin-right: 10%;
+            margin-left: 10%;
+            border-top: 2px solid #40472e;
+        }
+        .text p{
+            padding-top: 20px;
+            font-size: 24px;
+            padding-bottom: 30px;
+        }
+        .membersimg{
+            flex-basis: 32%;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            position:relative;
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+            margin-top: 20px;
+        }
+        .membersimg img{
+            display: block;
+            width: 300px;
+            height: 400px;
+        }
+        .minorilayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .minorilayer:hover{
+            background: #FFCDAC;
+        }
+        .minorilayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .minorilayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .minorilayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .minorilayer:hover p{
+            bottom: 8%;
+            opacity: 1;
+        }
+        .harukalayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .harukalayer:hover{
+            background: #99CDFF;
+        }
+        .harukalayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .harukalayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .harukalayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .harukalayer:hover p{
+            bottom: 18%;
+            opacity: 1;
+        }
+        .airilayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .airilayer:hover{
+            background: #FFA9CC;
+        }
+        .airilayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .airilayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .airilayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .airilayer:hover p{
+            bottom: 13%;
+            opacity: 1;
+        }
+        .shizukulayer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: 0.5s;
+        }
+        .shizukulayer:hover{
+            background: #9AEEDE;
+        }
+        .shizukulayer h3{
+            width: 100%;
+            font-weight:500;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 30px;
+        }
+        .shizukulayer p{
+            width: 100%;
+            font-weight:300;
+            color:#fff;
+            bottom:0;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+            font-size:20px;
+            text-align: left;
+        }
+        .shizukulayer:hover h3{
+            bottom: 87%;
+            opacity: 1;
+        }
+        .shizukulayer:hover p{
+            bottom: 13%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--Home-->
+    <section class="header">
+        <h1>.</h1>
+        <nav>
+         <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="abtus.html">ABOUT US</a></li>
+                <li><a href="Groups.html">BACK TO GROUPS</a></li>
+            </ul>
+         </div>
+        </nav>
+        <div class="text-box">
+            <h1>KamiyaMusic</h1>
+        </div>
+    </section>
+    <section class="info">
+        <h1>.</h1>
+        <div class="logo">
+        <img src="https://static.wikia.nocookie.net/projectsekai/images/a/a1/Moremorejumplogo.png/revision/latest?/" alt="img did not load">
+        </div>
+        <div class="text">
+            <div class="background">
+                <h1>Background</h1> <hr>
+               <p> Hanasato Minori has dreamed of becoming an idol since seeing Kiritani Haruka on TV. After Haruka retires from being an idol, the two manage to become friends. Soon, Minori convinces her to return to idolhood, forming MORE MORE JUMP! along with Momoi Airi and Hinomori Shizuku.</p>
+            </div>
+            <div class="trivia">
+             <h1>Trivia</h1> <hr>
+             <p>-The group's members have surnames that are references to plants: Hanasato (“花”, flower), Kiritani (“桐”, empress tree), Momoi (“桃”, peach), and Hinomori (“森”, forest).</p>
+            </div>
+            <div class="memberstxt">
+                <h1>Members</h1> <hr>
+            </div>
+            <div class="members">
+                <div class="membersimg">
+                    <img src="pics/minori.png" alt="img did not load">
+                    <div class="minorilayer">
+                        <h3>Minori Hanasato</h3>
+                        <p>Birthday: April 14 <br> Height: 158cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Dance Covers, Writing in her Diary, Looking after animals <br> Specialty: Coming up with catchphrases <br> Favorite Food: Salmon <br> Least Favorite Food: Broccoli <br> Dislikes: Relaxing Activities</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/haruka.png" alt="img did not load">
+                    <div class="harukalayer">
+                        <h3>Haruka Kiritani</h3>
+                        <p>Birthday: October 5 <br> Height: 163cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Collecting penguin-themed merch <br> Specialty: Basketball <br> Favorite Food: Anything sweet <br> Least Favorite Food: Wasabi <br> Dislikes: Idleness</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/airi.png" alt="img did not load">
+                    <div class="airilayer">
+                        <h3>Airi Momoi</h3>
+                        <p>Birthday: March 19 <br> Height: 156cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Researching idols, Shopping  <br> Specialty: Cooking, Looking after kids <br> Favorite Food: Japanese Sweets <br> Least Favorite Food: Liver <br> Dislikes: Cats (allergic)</p>
+                    </div>
+                </div>
+                <div class="membersimg">
+                    <img src="pics/shizuku.png" alt="img did not load">
+                    <div class="shizukulayer">
+                        <h3>Shizuku Hinomori</h3>
+                        <p>Birthday: December 6 <br> Height: 168cm <br> School: Miyamazuka Girls Academy <br> Hobbies: Reading, Taking walks <br> Specialty: Archer, Embroidery <br> Favorite Food: Udon noodles, Tofu skin <br> Least Favorite Food: Spicy foods <br> Dislikes: Reading maps, Using computers</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>Music</h1> <hr>
+                <p>Listen to their Music Here!</p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLh5ScaAFY9FnDc_FWBvMusoByVTnDn03f" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
